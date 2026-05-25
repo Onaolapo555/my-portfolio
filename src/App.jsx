@@ -15,7 +15,7 @@ const ContactForm = lazy(() => import('./pages/ContactForm.jsx'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail '));
 const ScrollSmooth = lazy(() => import('./components/ScrollSmooth.jsx'));
 const ScrollToTop = lazy(() => import('./components/ScrollToTop.jsx'));
-const ImageModal = lazy(() => import('./components/imageModal.jsx'));
+const ImageModal = lazy(() => import('./components/ImageModal.jsx'));
 
 
 
