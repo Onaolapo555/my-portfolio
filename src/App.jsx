@@ -12,7 +12,7 @@ const Skills = lazy(() => import('./pages/Skills.jsx'));
 const Header = lazy(() => import('./pages/Header.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const ContactForm = lazy(() => import('./pages/ContactForm.jsx'));
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail '));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail.jsx'));
 const ScrollSmooth = lazy(() => import('./components/ScrollSmooth.jsx'));
 const ScrollToTop = lazy(() => import('./components/ScrollToTop.jsx'));
 const ImageModal = lazy(() => import('./components/ImageModal.jsx'));
