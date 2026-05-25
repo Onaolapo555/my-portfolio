@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Loading from './components/Loading/Loading';
 import HeaderSkeleton from './components/HeaderSkeleton';
 
-const GlassNavbar= lazy (() => import('./components/GlassNavBar.jsx'))
+const GlassNavBar= lazy (() => import('./components/GlassNavBar.jsx'))
 const Footer = lazy(() => import('./pages/Footer.jsx'));
 const AllProjects = lazy(() => import('./pages/AllProjects.jsx'));
 const Projects = lazy(() => import('./pages/Projects.jsx'));
@@ -83,7 +83,7 @@ function App() {
 
           <Suspense fallback={<Loading/>}>
           <Footer />
-          <GlassNavbar/>
+          <GlassNavBar/>
 
           {/* ←←← ADD IMAGE MODAL HERE ←←← */}
           <ImageModal />

@@ -8,7 +8,7 @@ import {
 import { Home } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import './GlassNavbar.css';
+import './GlassNavBar.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
