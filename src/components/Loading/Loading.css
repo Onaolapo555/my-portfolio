@@ -1,0 +1,81 @@
+
+
+/* Loading Screen Background */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+/* ================== ORBITAL RINGS LOADER ================== */
+.orbital-loader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.orbital-ring {
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 50%;
+}
+
+.orbital-ring:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  border-top-color: #ff6b6b;
+  animation: orbit 1.5s linear infinite;
+}
+
+.orbital-ring:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  border-right-color: #48dbfb;
+  animation: orbit 1.2s linear infinite reverse;
+}
+
+.orbital-ring:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  border-bottom-color: #feca57;
+  animation: orbit 0.9s linear infinite;
+}
+
+.orbital-center {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 32px;
+  left: 32px;
+  background: linear-gradient(45deg, #ff6b6b, #48dbfb);
+  border-radius: 50%;
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5); 
+  }
+  50% { 
+    transform: scale(1.2); 
+    box-shadow: 0 0 20px rgba(72, 219, 251, 0.8); 
+  }
+}
