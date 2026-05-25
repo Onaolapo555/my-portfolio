@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loading from './components/Loading/Loading';
 import HeaderSkeleton from './components/HeaderSkeleton';
-// import GlassNavbar from './components/GlassNavBar';
 
 const GlassNavbar= lazy (() => import('./components/GlassNavBar.jsx'))
-// const NavBar = lazy(() => import('./components/NavBar.jsx'));
 const Footer = lazy(() => import('./pages/Footer.jsx'));
 const AllProjects = lazy(() => import('./pages/AllProjects.jsx'));
 const Projects = lazy(() => import('./pages/Projects.jsx'));
@@ -85,7 +83,6 @@ function App() {
 
           <Suspense fallback={<Loading/>}>
           <Footer />
-          {/* <NavBar /> */}
           <GlassNavbar/>
 
           {/* ←←← ADD IMAGE MODAL HERE ←←← */}
