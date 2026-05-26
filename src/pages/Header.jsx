@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa6'; 
+import { FaDownload } from 'react-icons/fa6'; 
 import { useInView } from '../components/useInView'; 
 import lottie from 'lottie-web';
 import { useEffect, useRef } from 'react';
@@ -9,9 +9,14 @@ import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
 
  function Header() {
 
-  const phoneNumber = "2349137884852"; 
-  const message = "Hi";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/public/001 onaolapo ayomide resume.pdf';
+    link.download = '001 onaolapo ayomide resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const [ref, isInView] = useInView({ 
     threshold: 0.2,    
@@ -20,6 +25,7 @@ import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
 
   const animationRef = useRef(null);
   const lottieInstance = useRef(null);
+
 
   useEffect(() => {
     if (animationRef.current && greenPulse) {
@@ -31,7 +37,6 @@ import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
         autoplay: true,
       });
     }
-
     // Cleanup
     return () => {
       if (lottieInstance.current) {
@@ -69,12 +74,10 @@ import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
       <div className='flex flex-row gap-6 text-xs md:text-lg font-bold'>
         <button className='btn-glow text-white  rounded-xl transition-all duration-400 lg:hover:px-5 hover:cursor-pointer'>
           <a 
-          href={whatsappUrl}
-           target="_blank"    
-            rel="noopener noreferrer"
+          onClick={handleDownload}
           className="whatsapp-button  flex gap-2 px-3 py-2 items-center">
-            Let's Talk
-          <FaWhatsapp className="w-4 h-4 text-green-600  rounded-full " />
+            Download CV
+          <FaDownload className="w-4 h-4 text-green-600  rounded-full " />
           </a>
         </button>
 

@@ -6,6 +6,7 @@ import { ExternalLink } from 'lucide-react'
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 
+
 const ProjectDetail = () => {
 
   const { slug } = useParams();
@@ -177,7 +178,7 @@ const ProjectDetail = () => {
       </main>
 
       {/* Image section  */}
-        <div className=' border  m-auto '>
+        {/* <div className=' border  m-auto '>
       <div className='p-6 border border-[#232628] rounded-3xl mb-6'>
       <img 
           src={project.image1} 
@@ -205,7 +206,7 @@ const ProjectDetail = () => {
           />
           </div>
           </div>
-          </div>
+          </div> */}
 
     </div>
   );

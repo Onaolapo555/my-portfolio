@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
         <div className="rounded-lg overflow-hidden mb-5">
           <img 
             className="w-full aspect-video object-cover group-hover:scale-110 transition-all duration-800" 
-            src={project.image1} 
+            src={project.image} 
             alt={project.title} 
           />
         </div>
@@ -26,12 +26,11 @@ const ProjectCard = ({ project }) => {
           {project.shortDesc || project.description}
         </p>
         
-        <button 
-          className="btn-view-project  border-[#232628] font-semibold p-2.5 rounded-xl flex items-center gap-2 hover:gap-4 transition-all duration-300 hover:cursor-pointer slide-bg  hover:transition-all hover:duration-300"
-          onClick={(e) => e.stopPropagation()}
+        <div 
+          className="btn-view-project inline-flex w-fit border-[#232628] font-semibold p-2.5 rounded-xl items-center gap-2 hover:gap-4 transition-all duration-300 hover:cursor-pointer slide-bg  hover:transition-all hover:duration-300"
         >
-          View Project<FaChevronRight />
-        </button>
+          View Project<FaChevronRight/>
+        </div>
       </main>
     </Link>
   );

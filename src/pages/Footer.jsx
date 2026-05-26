@@ -3,8 +3,8 @@ import {
   FaXTwitter,     
   FaGithub,
   FaEnvelope,
+  FaWhatsapp,
 } from 'react-icons/fa6'; 
-import { LuFileText } from 'react-icons/lu';
 // import { useInView } from '@/components/useInView';
 
 function Footer() {
@@ -14,7 +14,9 @@ const myName = "Onaolapo Ayomide";
 
  const mailtoLink = `mailto:${myEmail}?subject=Inquiry from your website&body=Hi ${myName},%0D%0A%0D%0AI visited your website and would like to get in touch.%0D%0A%0D%0ABest regards,%0D%0A`;
 
-
+  const phoneNumber = "2349137884852"; 
+  const message = "Hi";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return(
         <div>
@@ -48,12 +50,13 @@ const myName = "Onaolapo Ayomide";
           <FaEnvelope className="w-full h-full object-cover " />
         </a>
 
-         <a href="#" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-6 h-6  hover:scale-120 transition-all duration-300">
-          <LuFileText className="w-full h-full object-cover " />
-        </a>
+          <a 
+          href={whatsappUrl}
+           target="_blank"
+            rel="noopener noreferrer"
+          className="ww-6 h-6 hover:scale-120 transition-all duration-300">
+          <FaWhatsapp className="w-full h-full object-cover " />
+          </a>
         
             </div>
         </div>
