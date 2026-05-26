@@ -4,14 +4,13 @@ import Lenis from '@studio-freight/lenis';
 
 const ScrollSmooth = ({ children }) => {
   useEffect(() => {
-const lenis = new Lenis({
-  duration: 1.2,
+   const lenis = new Lenis({
+  duration: 1.0,
+  lerp: 0.1,
   smoothWheel: true,
-  wheelMultiplier: 1,
-
-  // Let mobile use native touch scrolling (feels more natural)
+  smoothTouch: false,
   syncTouch: false,
-  touchMultiplier: 1,
+  touchMultiplier: 1.6,
 });
 
     function raf(time) {
@@ -21,7 +20,9 @@ const lenis = new Lenis({
 
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return <>{children}</>;
