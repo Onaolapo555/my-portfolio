@@ -64,8 +64,6 @@ const ProjectDetail = () => {
     );
   }
 
- 
-
 
   return (
 
@@ -80,6 +78,17 @@ const ProjectDetail = () => {
 
         <h1 className="header font-bold mb-3">{project.title}</h1>
         <p className='small-text mb-7'>{project.shortDesc}</p>
+         {/* Image section  */}
+        <div className=' border  m-auto '>
+      <div className='p-6 border border-[#232628] rounded-3xl mb-6'>
+      <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full rounded-3xl m-auto hover:cursor-pointer" 
+          onClick={() => window.openImageModal(`${project.image}`)}
+          />
+          </div>
+          </div>
 
         <div className='border shadow-lg border-[#232628] rounded-xl  p-7'>
           <h1 className='header-three mb-2'>Description</h1>
@@ -181,10 +190,10 @@ const ProjectDetail = () => {
         {/* <div className=' border  m-auto '>
       <div className='p-6 border border-[#232628] rounded-3xl mb-6'>
       <img 
-          src={project.image1} 
+          src={project.image} 
           alt={project.title} 
           className="w-full rounded-3xl m-auto hover:cursor-pointer" 
-          onClick={() => window.openImageModal(`${project.image1}`)}
+          onClick={() => window.openImageModal(`${project.image}`)}
           />
           </div>
 

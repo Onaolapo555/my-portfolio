@@ -1,22 +1,35 @@
 import { FaDownload } from 'react-icons/fa6'; 
 import { useInView } from '../components/useInView'; 
 import lottie from 'lottie-web';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import greenPulse from '../assets/animation/Green-Pulse-Dot.json';
 import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
-// import myImg4 from '../assets/images/IMG-20250309-WA0000.jpg'
-// import myImg5 from '../assets/images/IMG-20250310-WA0000.jpg'
 
  function Header() {
 
+    const [isDownloading, setIsDownloading] = useState(false);
+
   const handleDownload = () => {
+    setIsDownloading(true);
+
     const link = document.createElement('a');
-    link.href = '/public/001 onaolapo ayomide resume.pdf';
+    link.href = '/001 onaolapo ayomide resume.pdf';
     link.download = '001 onaolapo ayomide resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    setTimeout(() => setIsDownloading(false), 1500);
   };
+
+  // const handleDownload = () => {
+  //   const link = document.createElement('a');
+  //   link.href = '/public/001 onaolapo ayomide resume.pdf';
+  //   link.download = '001 onaolapo ayomide resume.pdf';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   const [ref, isInView] = useInView({ 
     threshold: 0.2,    
@@ -72,13 +85,13 @@ import myImg3 from '../assets/images/file_00000000819071fda6c74087fdb4b7bc.png'
 </p>
 
       <div className='flex flex-row gap-6 text-xs md:text-lg font-bold'>
-        <button className='btn-glow text-white  rounded-xl transition-all duration-400 lg:hover:px-5 hover:cursor-pointer'>
-          <a 
+
+        <button className='btn-glow text-white flex gap-2 px-4 py-2 items-center rounded-xl transition-all duration-400 lg:hover:px-5 hover:cursor-pointer'
           onClick={handleDownload}
-          className="whatsapp-button  flex gap-2 px-3 py-2 items-center">
-            Download CV
+          disabled={isDownloading}>
+          {/* // className="whatsapp-button  flex gap-2 px-3 py-2 items-center"> */}
+          {isDownloading ? 'Downloading...' : 'Resume'}
           <FaDownload className="w-4 h-4 text-green-600  rounded-full " />
-          </a>
         </button>
 
         <div className='btn-glow-hire text-green-700 px-3 py-2 rounded-2xl flex items-center gap-2'>
